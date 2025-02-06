@@ -1,0 +1,79 @@
+/* VARIABLES */
+:root {
+
+}
+
+/* GLOBAL CONFIG */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+:root {
+  font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace, sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+/* STYLING */
+body {
+  background-color: #000000;
+  color: #E0E0E0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  flex: 0 1 80ch;
+
+  display: grid;
+  grid-template-rows: max-content max-content 1fr max-content;
+}
+
+/* HEADER */
+.header-buttons {
+  display: flex;
+  justify-content: right;
+
+  padding-top: 0.5em;
+}
+
+.header-button {
+  flex: 0;
+  padding: 1ch;
+
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* PROMPT */
+.prompt {
+  font-weight: bold;
+}
+
+.prompt-symbol {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* CONTENT */
+.content {
+  padding: 1ch;
+}
+
+p {
+  padding-bottom: 1em;
+  text-align: justify;
+}
+
