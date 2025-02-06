@@ -2,6 +2,8 @@
 :root {
   --text-color-default: #E0E0E0;
   --text-color-post-date: #808080;
+  --text-color-green: #4CB607;
+  --text-color-blue: #4577B7;
 }
 
 /* GLOBAL CONFIG */
@@ -66,11 +68,13 @@ body {
 /* PROMPT */
 .prompt {
   font-weight: bold;
+  color: var(--text-color-blue);
 }
 
 .prompt-symbol {
   font-weight: bold;
   font-size: 1.4em;
+  color: var(--text-color-green);
 }
 
 /* CONTENT */
