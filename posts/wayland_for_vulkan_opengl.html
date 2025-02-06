@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximim-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <div class="header">
+        <div class="header-buttons">
+          <a class="header-button" href="/">HOME</a>
+          <a class="header-button" href="/posts">POSTS</a>
+          <a class="header-button" href="/projects">PROJECTS</a>
+          <a class="header-button" href="/cookbook">COOKBOOK</a>
+        </div>
+      </div>
+      <div class="prompt">
+         ~/posts/wayland_for_vulkan_opengl<span class="prompt-symbol">&rsaquo;</span>
+      </div>
+      <div class="content">
+        <div class="post-metadata">
+          <h1 class="post-header">Wayland for Vulkan and OpenGL</h1>
+          <span class="post-date">2025-02-06</span>
+        </div>
+        <p>
+          IMPORTANT: This article is a work in progress.
+        </p>
+        <p>
+          TL;DR: Code listing is <a href="#complete-code-listing">here</a>.
+        </p>
+        <p>
+          Creating windows for use with Vulkan/OpenGL in OS APIs is... not so
+          simple, to say the least. And especially so in Wayland. The Windows
+          API is fairly straightforward in this aspect - create a class, create
+          a window, and then create a surface (setup for OpenGL is more
+          involved, but conceptually straighforward).
+        </p>
+        <p>
+          Wayland, on the other hand, requires you to understand Wayland, read
+          2-3 incomplete guides and a lot (and I mean <em>a lot</em>) of
+          unintuitive documentation, complete a 100 steps long checklist and
+          train your brain to create new contextual word associations - display
+          is in no way related to a physical/logical/any-kind-of display, it is
+          a Wayland session that connects you to the Wayland
+          server/compositor/window manager, and why on earth is it called shell
+          when we create "desktop-style user interfaces" with it?
+        </p>
+        <p>
+          No point rambling, let's create a window.
+        </p>
+        <h2>Wayland</h2>
+
+        <h2 id="complete-code-listing">Complete code listing</h2>
+      </div>
+      <div class="footer">
+      </div>
+    </div>
+  </body>
+</html>
