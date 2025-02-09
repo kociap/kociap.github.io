@@ -136,3 +136,9 @@ em {
 .entry-date {
   color: var(--text-color-post-date);
 }
+
+/* FLASH OF UNSTYLED CONTENT */
+html {
+  visibility: visible;
+  opacity: 1;
+}
