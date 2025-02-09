@@ -1,0 +1,4 @@
+  <div class="post-entry">
+    <div class="entry-date">#!{ date }</div>
+    <div class="entry-title"><a href="#!{ link }">#!{ title }</a></div>
+  </div>

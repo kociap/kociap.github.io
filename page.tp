@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximim-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#000000">
     <meta name="color-scheme" content="dark">
     <link rel="stylesheet" href="/style.css">
@@ -17,13 +17,10 @@
         </div>
       </div>
       <div class="prompt">
-         ~/posts<span class="prompt-symbol">&rsaquo;</span>
+         #!{ unix-link }<span class="prompt-symbol">&rsaquo;</span>
       </div>
       <div class="content">
-        <div class="post-entry">
-          <div class="entry-date">2025-02-06</div>
-          <div class="entry-title"><a href="/posts/wayland_for_vulkan_opengl">Wayland for Vulkan and OpenGL</a></div> 
-        </div>
+        #!{ content }
       </div>
       <div class="footer">
       </div>
