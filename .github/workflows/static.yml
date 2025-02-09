@@ -33,7 +33,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build HTML
-        run: find -name "*.ct" | xargs python build-pages.py page.tp
+        run: |
+          find -name "*.ct" | xargs python build-pages.py page.tp
+          find -name "*.css" | xargs cp -t build
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
