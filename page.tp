@@ -6,6 +6,7 @@
     <meta name="color-scheme" content="dark">
     <style>html { background: #000000; visibility: hidden; opacity: 0; }</style>
     <link rel="stylesheet" href="/style.css">
+    <title>#!{ title }</title>
   </head>
   <body>
     <div class="content-wrapper">
