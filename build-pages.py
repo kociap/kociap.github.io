@@ -2,6 +2,8 @@ import sys
 import os
 import re
 from dataclasses import dataclass
+from dateutil import parser as dateparser
+import datetime
 
 TEMPLATE_EXTENSION = "tp"
 CONTENT_EXTENSION = "ct"
@@ -40,7 +42,7 @@ def make_unix_link(path):
 @dataclass
 class Metadata:
   title: str
-  date: str
+  date: datetime
 
 def read_metadata(content):
   date = None
@@ -53,6 +55,7 @@ def read_metadata(content):
     line = line[2:].strip()
     if re.match(r'date\W*:', line):
       date = line.split(":")[1].strip()
+      date = dateparser.parse(date)
     elif re.match(r'title\W*:', line):
       title = line.split(":")[1].strip()
 
@@ -76,7 +79,7 @@ class Field_Context:
   link: str
   unix_link: str
   title: str
-  date: str
+  date: datetime
   content: str
 
 def replace_field(field, ctx):
@@ -99,7 +102,8 @@ def replace_field(field, ctx):
   elif command == "date":
     if not ctx.date:
       raise RuntimeError(f"requested date, but no date provided in {ctx.path}")
-    return ctx.date
+    # Reformat the date to a standard format
+    return ctx.date.strftime("%Y-%m-%d")
   elif command == "list-of":
     list_name = tokens[1]
     template_path = f"list-{list_name}.{TEMPLATE_EXTENSION}"
@@ -113,6 +117,7 @@ def replace_field(field, ctx):
               if os.path.isfile(os.path.join(list_name, f))
                 and os.path.splitext(f)[1] == f".{CONTENT_EXTENSION}"]
     entries = []
+    dates = []
     for entry in files:
       entry_link = make_absolute_link(entry)
       entry_unix_link = make_unix_link(entry)
@@ -122,6 +127,10 @@ def replace_field(field, ctx):
       ctx = Field_Context(entry, entry_link, entry_unix_link, metadata.title,
                           metadata.date, entry_content)
       entries.append(replace_fields(template_content, ctx))
+      dates.append(metadata.date.timestamp())
+    # Order descending by age. Compare only timestamps.
+    dates, entries = zip(*sorted(zip(dates, entries), key = lambda e: e[0],
+                                 reverse = True))
     return "\n".join(entries)
   else:
     raise RuntimeError(f"invalid command '{command}'")
