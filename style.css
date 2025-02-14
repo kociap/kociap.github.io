@@ -41,7 +41,7 @@ body {
 }
 
 .content-wrapper {
-  flex: 0 1 80ch;
+  flex: 0 1 82ch;
 
   display: grid;
   grid-template-rows: max-content max-content 1fr max-content;
