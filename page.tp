@@ -22,6 +22,7 @@
          #!{ unix-link }<span class="prompt-symbol">&rsaquo;</span>
       </div>
       <div class="content">
+        <div style="font-size:150%;font-weight:bold;color:#D13E3E;padding-bottom:1em">The page is now hosted at <a href="https://kociap.dev">kociap.dev</a></div>
         #!{ content }
       </div>
       <div class="footer">
